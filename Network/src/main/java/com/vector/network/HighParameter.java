@@ -48,7 +48,7 @@ public class HighParameter {
     RequestBody getRequestBody(){
         RequestBody requestBody = RequestBody.create(MediaType.parse("application/x-www-form-urlencoded;charset=utf-8"),
                 mContent.snapshot());
-        return null;
+        return requestBody;
     }
 
     /**

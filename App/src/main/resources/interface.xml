@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<requests>
-    <rootPath>
-        http://127.0.0.1:8080/server
-    </rootPath>
-    <request>
-        <url>/api/gossip/public/test?test=我是中国人</url>
+<requests rootPath="http://127.0.0.1:8080/server">
+    <request url="/api/gossip/public/test?test=我是中国人"/>
+    <request url="/api/gossip/public/test?test=我是中国人" method="post">
+        <param key="test" value="我就是中国人"/>
     </request>
-    <request>
-        <url>/api/gossip/public/test?test=我是中国人,我真的是中国人</url>
+    <request url="/api/gossip/public/testUpload" method="post">
+        <param key="content" value="test"/>
+        <file key="images" filepath="E:\1\1.png" filename="1.png"/>
+        <file key="images" filepath="E:\1\2.png" filename="2.png"/>
     </request>
 </requests>
