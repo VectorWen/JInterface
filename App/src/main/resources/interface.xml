@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<requests>
+    <rootPath>
+        http://127.0.0.1:8080/server
+    </rootPath>
+    <request>
+        <url>/api/gossip/public/test?test=我是中国人</url>
+    </request>
+    <request>
+        <url>/api/gossip/public/test?test=我是中国人,我真的是中国人</url>
+    </request>
+</requests>
