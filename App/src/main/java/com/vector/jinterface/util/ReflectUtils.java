@@ -1,4 +1,4 @@
-package com.vector.jinterface.parse.util;
+package com.vector.jinterface.util;
 
 /**
  * Author: vector.huang
