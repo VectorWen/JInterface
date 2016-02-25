@@ -34,7 +34,11 @@ public class Ji {
 
     public static void main(String[] args) throws DocumentException, IllegalAccessException {
         XmlParse xmlParse = new XmlParse();
-        Requests requests = xmlParse.parse(xmlParse.getClass().getResource("/interface.xml").getFile().substring(1));
+        String xmlPath = xmlParse.getClass().getResource("/interface.xml").getFile().substring(1);
+        if(args.length > 0){
+            xmlPath = args[0];
+        }
+        Requests requests = xmlParse.parse(xmlPath);
         List<Request> requestList = requests.getRequests();
         High high = new High();
 
