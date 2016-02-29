@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<responses>
+    <response id="@+id/base">
+        <status successValue="0">
+            <!-- 只能是下面的值 -->
+            <option comment="成功">0</option>
+            <option comment="参数错误">1</option>
+            <option comment="未登录">2</option>
+            <option comment="404">3</option>
+            <option comment="500">4</option>
+        </status>
+        <data/>
+        <total/>
+        <!-- required 默认为true -->
+        <message required="true"/>
+    </response>
+
+    <response id="@+id/getDetail" parent="@id/base">
+        <data>
+            <username valueType="String"/>
+            <id valueType="int"/>
+            <classId valueType="int"/>
+            <child>
+                <id />
+                <name />
+            </child>
+        </data>
+    </response>
+
+</responses>
+

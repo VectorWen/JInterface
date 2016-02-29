@@ -39,8 +39,11 @@ public class High {
 
 
     public Call get(String url,HighParameter parameter, Callback callback){
+        HttpUrl.Builder urlBuilder = HttpUrl.parse(url).newBuilder();
+        parameter.addTo(urlBuilder);
+
         Request request = new Request.Builder()
-                .url(url+"?"+parameter.toParameter())
+                .url(urlBuilder.build())
                 .header("Content-Type", "application/x-www-form-urlencoded;charset=utf-8")
                 .get()
                 .build();

@@ -17,6 +17,8 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
+import javax.imageio.ImageIO;
+
 import okhttp3.Call;
 import okhttp3.Callback;
 import okhttp3.HttpUrl;
@@ -89,7 +91,8 @@ public class Ji {
                     }
 
                     public void onResponse(Call call, Response response) throws IOException {
-                        Logger.d(response.body().string());
+                        String result ="code = " + response.code() + "\njson = "+ response.body().string();
+                        Logger.d(result);
                     }
                 });
             } else {
@@ -99,7 +102,8 @@ public class Ji {
                     }
 
                     public void onResponse(Call call, Response response) throws IOException {
-                        Logger.d(response.body().string());
+                        String result ="code = " + response.code() + "\njson = "+ response.body().string();
+                        Logger.d(result);
                     }
                 });
             }

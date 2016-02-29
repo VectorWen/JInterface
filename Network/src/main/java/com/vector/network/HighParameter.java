@@ -1,5 +1,9 @@
 package com.vector.network;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import okhttp3.HttpUrl;
 import okhttp3.MediaType;
 import okhttp3.RequestBody;
 import okio.Buffer;
@@ -21,6 +25,7 @@ public class HighParameter {
 
     static final String FORM_ENCODE_SET = " \"':;<=>@[]^`{}|/\\?#&!$(),~";
 
+    private final List<String> param = new ArrayList<String>();
     private final Buffer mContent = new Buffer();
 
     /**
@@ -30,6 +35,8 @@ public class HighParameter {
      * @return
      */
     public HighParameter add(String key, String value){
+        param.add(key);
+        param.add(value);
         if (mContent.size() > 0) {
             mContent.writeByte('&');
         }
@@ -57,6 +64,12 @@ public class HighParameter {
      */
     String toParameter() {
         return mContent.readUtf8();
+    }
+
+    void addTo(HttpUrl.Builder builder){
+        for (int i = 0; i < param.size(); i += 2) {
+            builder.addQueryParameter(param.get(i),param.get(i+1));
+        }
     }
 
     /**
