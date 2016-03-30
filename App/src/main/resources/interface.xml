@@ -1,22 +1,23 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<requests rootPath="http://127.0.0.1:8080/server">
-    <request url="/api/gossip/public/test?test=我是中国人"/>
-    <!-- <request url="/api/gossip/public/test?test=我" method="post">
+<requests rootPath="http://127.0.0.1:8080">
+    <!--  <request url="/api/gossip/public/test?test=我是中国人"/>
+       <request url="/api/gossip/public/test?test=我" method="post">
 
-      &lt;!&ndash; 多个key 只会读取最后一个 &ndash;&gt;
-      <param key="test" value="是"/>
-      <param key="test" value="中"/>
-      <param key="test" value="国"/>
-      <param key="test" value="人"/>
-  </request>
-  <request url="/api/gossip/public/testUpload" method="post">
-      <param key="content" value="test"/>
-      <file key="images" filepath="E:\1\1.png" filename="1.png"/>
-      <file key="images" filepath="E:\1\2.png" filename="2.png"/>
-  </request>-->
-    <request method="post" url="/api/gossip/custom/create?access_token=d82c205c-d17b-4d80-8738-5529ffd43404">
+        &lt;!&ndash; 多个key 只会读取最后一个 &ndash;&gt;
+        <param key="test" value="是"/>
+        <param key="test" value="中"/>
+        <param key="test" value="国"/>
+        <param key="test" value="人"/>
+    </request>
+    <request url="/api/gossip/public/testUpload" method="post">
+        <param key="content" value="test"/>
+        <file key="images" filepath="E:\1\1.png" filename="1.png"/>
+        <file key="images" filepath="E:\1\2.png" filename="2.png"/>
+    </request> -->
+   <!-- <request method="post" url="/api/gossip/custom/create?access_token=d82c205c-d17b-4d80-8738-5529ffd43404">
         <param key="access_token"
                value="d82c205c-d17b-4d80-8738-5529ffd43404"/>
+        <param key="categoryId" value="1"/>
         <param key="content"
                value="我也是醉了我也是醉了我是醉了我也是醉了我也是醉了我也是醉了我也是醉了我也是醉了我也是醉了我也是醉了我也是醉了我也是醉了我也是醉了我也是醉了我也是醉了我也是醉了我也是醉了我也是醉了我也是醉了我也是醉了我也是醉了我也是醉了我也是醉了我也是醉了我也是醉了我也是醉了我也是醉了我也是醉了我也是醉了我也是醉了我也是醉了我也是醉了我也是醉了我也是醉了我d也是醉了我也是醉了我也是醉了我也是醉了我也是醉了"/>
         <file key="images"
@@ -25,5 +26,41 @@
         <file key="images"
               filepath="E:\1\1.png"
               filename="1.png"/>
+        <file key="images"
+              filepath="E:\1\2.png"
+              filename="empty.png"/>
+        <file key="images"
+              filepath="E:\1\1.png"
+              filename="1.png"/>
+        <file key="images"
+              filepath="E:\1\2.png"
+              filename="empty.png"/>
+        <file key="images"
+              filepath="E:\1\1.png"
+              filename="1.png"/>
+        <file key="images"
+              filepath="E:\1\2.png"
+              filename="empty.png"/>
+        <file key="images"
+              filepath="E:\1\1.png"
+              filename="1.png"/>
+        <file key="images"
+              filepath="E:\1\2.png"
+              filename="empty.png"/>
+        <file key="images"
+              filepath="E:\1\1.png"
+              filename="1.png"/>
+    </request>-->
+    <request method="post"
+             url="/api/gossip/custom/getDetail">
+        <param key="access_token"
+               value="d82c205c-d17b-4d80-8738-5529ffd43404"/>
+        <param key="gossipId" value="1"/>
     </request>
+<!--    <request method="post"
+             url="/api/user/custom/uploadHeadPic2?access_token=d82c205c-d17b-4d80-8738-5529ffd43404">
+        <file key="headPic"
+              filepath="E:\1\1.png"
+              filename="1.png"/>
+    </request>-->
 </requests>

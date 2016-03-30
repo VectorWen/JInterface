@@ -1,4 +1,4 @@
-package com.vector.jinterface.model;
+package com.vector.jinterface.entity;
 
 import com.vector.library.logger.Logger;
 

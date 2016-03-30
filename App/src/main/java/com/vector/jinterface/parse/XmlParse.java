@@ -1,8 +1,8 @@
 package com.vector.jinterface.parse;
 
-import com.vector.jinterface.model.Request;
-import com.vector.jinterface.model.RequestFile;
-import com.vector.jinterface.model.Requests;
+import com.vector.jinterface.entity.Request;
+import com.vector.jinterface.entity.RequestFile;
+import com.vector.jinterface.entity.Requests;
 
 import org.dom4j.Document;
 import org.dom4j.DocumentException;

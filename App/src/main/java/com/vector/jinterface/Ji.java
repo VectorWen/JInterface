@@ -1,8 +1,8 @@
 package com.vector.jinterface;
 
-import com.vector.jinterface.model.Request;
-import com.vector.jinterface.model.RequestFile;
-import com.vector.jinterface.model.Requests;
+import com.vector.jinterface.entity.Request;
+import com.vector.jinterface.entity.RequestFile;
+import com.vector.jinterface.entity.Requests;
 import com.vector.jinterface.parse.XmlParse;
 import com.vector.library.logger.Logger;
 import com.vector.network.High;
@@ -11,19 +11,13 @@ import com.vector.network.HighParameter;
 
 import org.dom4j.DocumentException;
 
-import java.io.File;
 import java.io.IOException;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
-import javax.imageio.ImageIO;
-
 import okhttp3.Call;
 import okhttp3.Callback;
-import okhttp3.HttpUrl;
-import okhttp3.MediaType;
-import okhttp3.RequestBody;
 import okhttp3.Response;
 
 /**
