@@ -22,13 +22,19 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <processorPath useClasspath="true" />
-        <module name="App" />
         <module name="Library" />
         <module name="Network" />
       </profile>
+      <profile default="false" name="Annotation profile for App" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="true" />
+        <module name="App" />
+      </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="App" target="1.5" />
+      <module name="App" target="1.7" />
       <module name="JInterface" target="1.5" />
       <module name="Library" target="1.5" />
       <module name="Network" target="1.5" />

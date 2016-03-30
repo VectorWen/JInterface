@@ -60,10 +60,6 @@ public class User implements java.io.Serializable {
 		this.id = id;
 	}
 
-
-
-
-
 	@Column(name = "Pwd")
 	public String getPassword() {
 		return password;

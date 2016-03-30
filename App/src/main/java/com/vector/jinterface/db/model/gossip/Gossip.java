@@ -9,6 +9,7 @@ import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
@@ -61,21 +62,11 @@ public class Gossip {
     @Transient
     private int commentTotal;
     @Transient
-    private int commenttotal;
-    @Transient
     private boolean isFavorite;
     @Transient
     private boolean isLike;
     @Transient
     private int likeTotal;
-
-    public int getCommenttotal() {
-        return commenttotal;
-    }
-
-    public void setCommenttotal(int commenttotal) {
-        this.commenttotal = commenttotal;
-    }
 
     public Gossip(int gossipId) {
         this.id = gossipId;
@@ -167,7 +158,7 @@ public class Gossip {
 	}
 
 	@Id
-	@GeneratedValue
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	public int getId() {
 		return id;
 	}

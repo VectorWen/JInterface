@@ -14,6 +14,8 @@
          http://www.springframework.org/schema/aop/spring-aop-4.1.xsd">
 
     <context:component-scan base-package="com.vector.jinterface.db.model"/>
+    <context:component-scan base-package="com.vector.jinterface.db.service"/>
+    <context:component-scan base-package="com.vector.jinterface.db.controller"/>
 
     <!--  整合Hibernate start -->
     <!--  DataSource - c3p0 -->
