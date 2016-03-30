@@ -8,16 +8,30 @@ import java.io.UnsupportedEncodingException;
  */
 public class UnicodeUtils {
 
+    public static String getRandomRangeText(int start,int end){
+        int length = (int) (start + Math.random()*(end - start + 1));
+        return getRandomText(length);
+    }
+
+    public static String getRandomText(int length){
+        StringBuffer buffer = new StringBuffer(length);
+        for(int i =0;i<length;i++){
+            buffer.append(getRandomZHCN());
+        }
+        return buffer.toString();
+    }
 
     public static char getRandomZHCN(){
         //最小值+Math.random()*(最大值-最小值+1)
         int gbStart = 45217;//(0xB0 << 8) + 0xA1
         int gbEnd = 55289;
-        int gbLength = gbEnd - gbStart;
-
-        int random = (int) (gbStart + Math.random()*gbLength);
-        System.out.println(random);
-        return '2';
+        int gbLength = 55289 - 45217;
+        char c = 0;
+        while (c == 0){
+            int random = (int) (gbStart + Math.random()*(gbLength+1));
+            c = UnicodeUtils.getZHCN(random);
+        }
+        return c;
     }
 
     public static char getZHCN(int position) {

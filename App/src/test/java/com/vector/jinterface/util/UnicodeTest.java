@@ -11,16 +11,18 @@ import java.io.UnsupportedEncodingException;
 public class UnicodeTest {
 
     @Test
+    public void textRandomText(){
+        String text = UnicodeUtils.getRandomText(10);
+        System.out.println(text.length() + text);
+        text = UnicodeUtils.getRandomRangeText(3,20);
+        System.out.println(text.length() + text);
+    }
+
+    @Test
     public void testRandom() throws UnsupportedEncodingException {
-        //最小值+Math.random()*(最大值-最小值+1)
-        int gbStart = 45217;//(0xB0 << 8) + 0xA1
-        int gbEnd = 55289;
-        int gbLength = 55289 - 45217;
         for(int i=0;i<100;i++){
-            int random = (int) (gbStart + Math.random()*(gbLength+1));
-            char c = UnicodeUtils.getZHCN(random);
-            if(c != 0)
-            System.out.println(random +" = " + c);
+            char c = UnicodeUtils.getRandomZHCN();
+            System.out.print(c);
         }
     }
 
