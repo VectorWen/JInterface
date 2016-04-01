@@ -33,11 +33,18 @@ public class TestData {
         System.out.print("添加分类 - end" + end);
         System.out.println("，耗时 ：" + (end - start));*/
 
-        start = System.currentTimeMillis();
+       /* start = System.currentTimeMillis();
         System.out.println("添加口袋圈 - start " + start);
         dataController.addGossip(sf);
         end = System.currentTimeMillis();
         System.out.print("添加口袋圈 - end" + end);
+        System.out.println("，耗时 ：" + (end - start));*/
+
+        start = System.currentTimeMillis();
+        System.out.println("添加评论 - start " + start);
+        dataController.addComment(sf);
+        end = System.currentTimeMillis();
+        System.out.print("添加评论 - end" + end);
         System.out.println("，耗时 ：" + (end - start));
 
     }

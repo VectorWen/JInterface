@@ -68,8 +68,8 @@ public class User implements java.io.Serializable {
 	public void setPassword(String password) {
 		this.password = password;
 	}
-	
-	
+
+
 	@Column(name = "PwdSalt")
 	public String getPwdSalt() {
 		return this.pwdSalt;
@@ -145,6 +145,6 @@ public class User implements java.io.Serializable {
 		this.username = username;
 	}
 
-	
+
 
 }

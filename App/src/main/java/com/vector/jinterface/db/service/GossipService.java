@@ -3,6 +3,7 @@ package com.vector.jinterface.db.service;
 import com.vector.jinterface.db.constant.Constants;
 import com.vector.jinterface.db.model.gossip.Gossip;
 import com.vector.jinterface.db.model.gossip.GossipCategory;
+import com.vector.jinterface.db.model.gossip.GossipComment;
 import com.vector.jinterface.db.model.gossip.GossipImage;
 import com.vector.jinterface.db.model.user.User;
 import com.vector.jinterface.util.RandomUtils;
@@ -64,6 +65,32 @@ public class GossipService {
             }
             gossip.setImages(images);
             session.save(gossip);
+        }
+        session.getTransaction().commit();
+        session.close();
+    }
+
+    public void addComment(SessionFactory sf, int size){
+        Session session = sf.openSession();
+        session.beginTransaction();
+        for (int c = 0; c < size; c++) {
+            GossipComment comment = new GossipComment();
+            Gossip gossip = new Gossip();
+            int  gossipId = RandomUtils.getRandom(Constants.GOSSIP_ID_START, Constants.GOSSIP_ID_END);
+            gossip.setId(gossipId);
+            comment.setGossip(gossip);
+            User user = new User();
+            user.setId(RandomUtils.getRandom(Constants.USER_ID_START, Constants.USER_ID_END));
+            comment.setUser(user);
+
+            comment.setCreated(System.currentTimeMillis() - RandomUtils.getRandom(0, 366 * 24 * 60 * 60 * 1000));
+            comment.setContent(UnicodeUtils.getRandomRangeText(10, 100));
+            if(RandomUtils.getRandom(1,2) == 1){
+                User user1 = new User();
+                user1.setId(RandomUtils.getRandom(Constants.USER_ID_START, Constants.USER_ID_END));
+                comment.setBeReplyUser(user1);
+            }
+            session.save(comment);
         }
         session.getTransaction().commit();
         session.close();
