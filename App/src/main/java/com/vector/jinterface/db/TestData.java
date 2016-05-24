@@ -19,7 +19,7 @@ public class TestData {
         DataController dataController = ctx.getBean(DataController.class);
         long start,end;
 
-        /*start = System.currentTimeMillis();
+       /* start = System.currentTimeMillis();
         System.out.println("添加用户 - start " + start);
         dataController.addUser(sf);
         end = System.currentTimeMillis();
@@ -40,12 +40,12 @@ public class TestData {
         System.out.print("添加口袋圈 - end" + end);
         System.out.println("，耗时 ：" + (end - start));*/
 
-        start = System.currentTimeMillis();
+       /* start = System.currentTimeMillis();
         System.out.println("添加评论 - start " + start);
         dataController.addComment(sf);
         end = System.currentTimeMillis();
         System.out.print("添加评论 - end" + end);
-        System.out.println("，耗时 ：" + (end - start));
+        System.out.println("，耗时 ：" + (end - start));*/
 
     }
 
